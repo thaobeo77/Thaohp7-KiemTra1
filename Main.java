@@ -3,6 +3,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 
 import java.time.Duration;
 // Mở webdriver trang
@@ -64,7 +68,7 @@ public class main {
         Actions action = new Actions(driver);
         action.sendKeys(Keys.RETURN);
         action.perform();
-        Thread.sleep(2000);
+        Thread.sleep(000);
         WebElement searchresult = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/table/tbody/tr/td[2]"));
         Assert.assertTrue(searchresult.getText().contains("Adidas"));
     }
