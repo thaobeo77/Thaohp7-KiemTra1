@@ -30,45 +30,60 @@ public class main {
         driver.findElement(new By.ByXPath("//span[normalize-space()='Category']")).click();
         Thread.sleep(2000);
 
-// Thêm mới thông tin các trường
+//Thêm mới category
         driver.findElement(new By.ByXPath("//span[normalize-space()='Add New category']")).click();
         Thread.sleep(2000);
+
         driver.findElement(new By.ByXPath("//input[@id='name']")).sendKeys("Adidas");
         Thread.sleep(2000);
+
         driver.findElement(new By.ByXPath("//div[contains(text(),'Sport Shoes')]")).click();
         Thread.sleep(2000);
+
         driver.findElement(By.id("bs-select-1-0")).click();
         Thread.sleep(2000);
+
         driver.findElement(By.id("order_level")).sendKeys("7");
         Thread.sleep(2000);
+        
         driver.findElement(new By.ByXPath("//button[@title='Physical']")).click();
         Thread.sleep(2000);
+
         driver.findElement(By.id("bs-select-2-1")).click();
         Thread.sleep(2000);
+        
         driver.findElement(new By.ByXPath("//div[5]//div[1]//div[1]//div[2]")).click();
         driver.findElement(new By.ByXPath("//div[@class='aiz-uploader-all clearfix c-scrollbar-light']//div[2]//div[1]//div[1]//div[1]//img[1]")).click();
         driver.findElement(new By.ByXPath("//button[normalize-space()='Add Files']")).click();
         Thread.sleep(2000);
+        
         driver.findElement(new By.ByXPath("//div[6]//div[1]//div[1]//div[2]")).click();
         driver.findElement(new By.ByXPath("//div[10]//div[1]//div[1]//div[1]//img[1]")).click();
         driver.findElement(new By.ByXPath("//button[normalize-space()='Add Files']")).click();
         Thread.sleep(2000);
+        
         driver.findElement(By.name("meta_title")).sendKeys("Shoes");
         Thread.sleep(2000);
+        
         driver.findElement(By.name("meta_description")).sendKeys("easy to wear");
+        Thread.sleep(2000);
+        
         driver.findElement(new By.ByXPath("//button[@title='Nothing selected']")).click();
         Thread.sleep(2000);
+        
         driver.findElement(new By.ByXPath("//a[@id='bs-select-3-0']")).click();
         Thread.sleep(2000);
+        
         driver.findElement(new By.ByXPath("//button[normalize-space()='Save']")).click();
         Thread.sleep(2000);
-        // Search category vừa tạo
+        
+ // Search category vừa tạo
         WebElement src_category = driver.findElement(By.id("search"));
         src_category.sendKeys("Adidas");
         Actions action = new Actions(driver);
         action.sendKeys(Keys.RETURN);
         action.perform();
-        Thread.sleep(000);
+        Thread.sleep(2000);
         WebElement searchresult = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/table/tbody/tr/td[2]"));
         Assert.assertTrue(searchresult.getText().contains("Adidas"));
     }
